@@ -82,7 +82,7 @@
   },
   "dependencies": {
     "@fluentui/svg-icons": "1.1.101",
-    "@pnp/cli-microsoft365": "10.11.0",
+    "@pnp/cli-microsoft365": "8.0.0",
     "applicationinsights": "1.8.10",
     "arg": "4.1.3",
     "cheerio": "^1.0.0-rc.12",
