@@ -88,6 +88,7 @@
     "cheerio": "^1.0.0-rc.12",
     "clean-css": "5.1.0",
     "cross-spawn": "7.0.6",
+    "esm": "3.2.25",
     "fast-glob": "3.2.5",
     "gray-matter": "^4.0.3",
     "highlight.js": "10.6.0",
