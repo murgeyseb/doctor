@@ -3,7 +3,7 @@ import * as fg from "fast-glob";
 import md = require("markdown-it");
 import hljs = require("highlight.js");
 import { encode } from "html-entities";
-import { CliCommand, ShortcodesHelpers, TempDataHelper } from "@helpers";
+import { CliCommand, ShortcodesHelpers } from "@helpers";
 import { CommandArguments, MarkdownSettings } from "@models";
 
 export class MarkdownHelper {
@@ -131,7 +131,7 @@ export class MarkdownHelper {
       }
     }
 
-    return await TempDataHelper.create(wpData);
+    return JSON.stringify(wpData);
   }
 
   /**

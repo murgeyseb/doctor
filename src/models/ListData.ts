@@ -11,6 +11,7 @@ export interface ListData {
   DefaultItemOpenUseListSetting: boolean;
   Description: string;
   Direction: string;
+  DisableCommenting: boolean;
   DisableGridEditing: boolean;
   DocumentTemplateUrl?: string;
   DraftVersionVisibility: number;
@@ -29,6 +30,8 @@ export interface ListData {
   Id: string;
   ImagePath: ImagePath;
   ImageUrl: string;
+  DefaultSensitivityLabelForLibrary: string;
+  SensitivityLabelToEncryptOnDownloadForLibrary?: string;
   IrmEnabled: boolean;
   IrmExpire: boolean;
   IrmReject: boolean;
@@ -51,7 +54,7 @@ export interface ListData {
   ServerTemplateCanCreateFolders: boolean;
   TemplateFeatureId: string;
   Title: string;
-  Url: string;
+  Url?: string;
 }
 
 export interface ImagePath {

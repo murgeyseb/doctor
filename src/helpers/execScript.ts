@@ -68,15 +68,18 @@ const promiseExecScript = async <T>(
       const execution = spawn(CliCommand.getName(), [...args]);
 
       execution.stdout.on("data", (data) => {
+        Logger.debug(`Data: ${data}`);
         console.log(`${data}`);
       });
 
       execution.stdout.on("close", (data: any) => {
+        Logger.debug(`close: ${data}`);
         resolve(data);
       });
 
       execution.stderr.on("data", async (error) => {
         error = Logger.mask(error, toMask);
+        Logger.debug(`Error: ${error}`);
         reject(new Error(error));
       });
     } else {
@@ -86,12 +89,15 @@ const promiseExecScript = async <T>(
         );
         if (stderr) {
           const error = Logger.mask(stderr, toMask);
+          Logger.debug(`Error: ${error}`);
           reject(new Error(error));
           return;
         }
+        Logger.debug(`Data: ${stdout}`);
 
         resolve(stdout as any as T);
       } catch (e) {
+        Logger.debug(`Error: ${e.message}`);
         reject(e.message);
       }
     }

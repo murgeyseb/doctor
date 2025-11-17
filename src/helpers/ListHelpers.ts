@@ -1,4 +1,4 @@
-import { ArgumentsHelper, CliCommand, execScript } from "@helpers";
+import { ArgumentsHelper, CliCommand, execScript, Logger } from "@helpers";
 import { ListData } from "@models";
 
 export class ListHelpers {
@@ -19,10 +19,13 @@ export class ListHelpers {
       if (listData && typeof listData === "string") {
         listData = JSON.parse(listData);
       }
-      this.pageList = (listData as ListData[]).find((l) =>
-        l.Url.toLowerCase().includes("/sitepages")
+      this.pageList = (listData as ListData[]).find((l) => {
+              return l.RootFolder.ServerRelativeUrl.toLowerCase().includes("/sitepages")
+          }
       );
+
     }
+    Logger.debug(`PageList "${this.pageList}"`);
     return this.pageList;
   }
 }
