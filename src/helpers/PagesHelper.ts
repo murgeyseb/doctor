@@ -295,7 +295,7 @@ export class PagesHelper {
       // Web part needs to be updated
       await execScript(
         ArgumentsHelper.parse(
-          `spo page control set --webUrl "${webUrl}" --pageName "${slug}" --id "${wpId}" --webPartData "${JSON.stringify(wpData)}"`
+          `spo page control set --webUrl "${webUrl}" --pageName "${slug}" --id "${wpId}" --webPartData @${wpData}`
         ),
         CliCommand.getRetry()
       );
@@ -303,7 +303,7 @@ export class PagesHelper {
       // Add new markdown web part
       await execScript(
         ArgumentsHelper.parse(
-          `spo page clientsidewebpart add --webUrl "${webUrl}" --pageName "${slug}" --webPartId 1ef5ed11-ce7b-44be-bc5e-4abd55101d16 --webPartData ${JSON.stringify(wpData)}`
+          `spo page clientsidewebpart add --webUrl "${webUrl}" --pageName "${slug}" --webPartId 1ef5ed11-ce7b-44be-bc5e-4abd55101d16 --webPartData @${wpData} --verticalSection`
         ),
         CliCommand.getRetry()
       );
