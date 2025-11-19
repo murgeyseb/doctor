@@ -303,7 +303,7 @@ export class PagesHelper {
       // Add new markdown web part
       await execScript(
         ArgumentsHelper.parse(
-          `spo page clientsidewebpart add --webUrl "${webUrl}" --pageName "${slug}" --webPartId 1ef5ed11-ce7b-44be-bc5e-4abd55101d16 --webPartData @${wpData} --section 1`
+          `spo page clientsidewebpart add --webUrl "${webUrl}" --pageName "${slug}" --webPartId 1ef5ed11-ce7b-44be-bc5e-4abd55101d16 --webPartData @${wpData} --section`
         ),
         CliCommand.getRetry()
       );
