@@ -1,4 +1,4 @@
-import { ArgumentsHelper, CliCommand, execScript, Logger } from "@helpers";
+import { ArgumentsHelper, CliCommand, execScript } from "@helpers";
 import { ListData } from "@models";
 
 export class ListHelpers {
