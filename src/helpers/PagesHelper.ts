@@ -27,8 +27,6 @@ export class PagesHelper {
    */
   public static async getAllPages(webUrl: string): Promise<void> {
     PagesHelper.pages = await FileHelpers.getAllPages(webUrl, "sitepages");
-    Logger.debug(`Existing pages`);
-    Logger.debug(PagesHelper.pages);
   }
 
   /**

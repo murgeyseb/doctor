@@ -25,7 +25,6 @@ export class ListHelpers {
       );
 
     }
-    Logger.debug(`PageList "${this.pageList}"`);
     return this.pageList;
   }
 }

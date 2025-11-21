@@ -154,8 +154,6 @@ export class FileHelpers {
 
     const pageList = await ListHelpers.getSitePagesList(webUrl);
 
-    Logger.debug(`pages: ${pageList}`);
-
     let filesData: File[] | string = await execScript<string>(
       ArgumentsHelper.parse(
         `spo listitem list --webUrl "${webUrl}" --listId "${pageList.Id}" --fields "Id,Title,FileRef" -o json`
