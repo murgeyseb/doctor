@@ -316,11 +316,11 @@ export class NavigationHelper {
     url: string,
     id: number = null
   ): Promise<NavigationItem | null> {
-    const rootElm = id ? `--parentNodeId "${id}"` : "";
+    const rootElm = id ? `--parentNodeId "${id}"` : `--location "${type}"`;
     if (name) {
       const item = await execScript(
         ArgumentsHelper.parse(
-          `spo navigation node add --webUrl "${webUrl}" --location "${type}" --title "${name}" --url "${url}" ${rootElm} -o json`
+          `spo navigation node add --webUrl "${webUrl}" --title "${name}" --url "${url}" ${rootElm} -o json`
         ),
         CliCommand.getRetry()
       );
