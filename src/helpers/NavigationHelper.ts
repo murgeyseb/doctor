@@ -295,7 +295,7 @@ export class NavigationHelper {
     if (id) {
       await execScript(
         ArgumentsHelper.parse(
-          `spo navigation node remove --webUrl "${webUrl}" --location "${type}" --id "${id}" --confirm`
+          `spo navigation node remove --webUrl "${webUrl}" --location "${type}" --id "${id}" --force`
         ),
         CliCommand.getRetry()
       );
